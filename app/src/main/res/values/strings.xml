@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">AnonApp</string>
+    <string name="login">Эл. почта</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="password_repeat">Повторите пароль</string>
+    <string name="wrong_login_or_password">Неверный логин или пароль</string>
+    <string name="wrong_login">Некорректный адрес</string>
+    <string name="used_login">Адрес занят</string>
+    <string name="wrong_password_repeat">Пароль не совпадают</string>
+    <string name="register">Зарегистрироваться</string>
 </resources>
