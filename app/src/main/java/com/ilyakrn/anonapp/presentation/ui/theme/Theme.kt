@@ -1,4 +1,4 @@
-package com.ilyakrn.anonapp.presentation.theme
+package com.ilyakrn.anonapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

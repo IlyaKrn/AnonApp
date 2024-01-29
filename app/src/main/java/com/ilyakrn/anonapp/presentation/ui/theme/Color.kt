@@ -1,4 +1,4 @@
-package com.ilyakrn.anonapp.presentation.theme
+package com.ilyakrn.anonapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
