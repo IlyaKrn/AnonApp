@@ -9,4 +9,11 @@
     <string name="used_login">Адрес занят</string>
     <string name="wrong_password_repeat">Пароль не совпадают</string>
     <string name="register">Зарегистрироваться</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="verify">Подтвердить</string>
+    <string name="resend_code">Повторить отправку</string>
+    <string name="change_email">Изменить эл. почту</string>
+    <string name="enter_code">Введите код из сообщения</string>
 </resources>

@@ -26,22 +26,13 @@ import com.ilyakrn.anonapp.R
 
 @Preview
 @Composable
-fun RegisterComponent(onSelectLogin: ()-> Unit = {}, onRegister: ()-> Unit = {}) {
+fun  ChangePasswordComponent(onChange: ()-> Unit = {}) {
 
-    val mutableLogin = remember {
-        mutableStateOf("")
-    }
     val mutablePassword = remember {
         mutableStateOf("")
     }
     val mutablePasswordRepeat = remember {
         mutableStateOf("")
-    }
-    val mutableWrongLogin = remember {
-        mutableStateOf(false)
-    }
-    val mutableUsedLogin = remember {
-        mutableStateOf(false)
     }
     val mutableWrongPasswordRepeat = remember {
         mutableStateOf(false)
@@ -60,35 +51,6 @@ fun RegisterComponent(onSelectLogin: ()-> Unit = {}, onRegister: ()-> Unit = {})
             OutlinedTextField(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally),
-                value = mutableLogin.value,
-                onValueChange = {
-                    mutableLogin.value = it
-                },
-                textStyle = MaterialTheme.typography.bodyLarge,
-                label = {
-                    Text(
-                        text = stringResource(id = R.string.login),
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
-            )
-            if(mutableWrongLogin.value){
-                Text(
-                    text = stringResource(id = R.string.wrong_login),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.error
-                )
-            }
-            if(mutableUsedLogin.value){
-                Text(
-                    text = stringResource(id = R.string.used_login),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.error
-                )
-            }
-            OutlinedTextField(
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally),
                 value = mutablePassword.value,
                 onValueChange = {
                     mutablePassword.value = it
@@ -96,7 +58,7 @@ fun RegisterComponent(onSelectLogin: ()-> Unit = {}, onRegister: ()-> Unit = {})
                 textStyle = MaterialTheme.typography.bodyLarge,
                 label = {
                     Text(
-                        text = stringResource(id = R.string.password),
+                        text = stringResource(id = R.string.new_password),
                         style = MaterialTheme.typography.bodyLarge
                     )
                 },
@@ -157,13 +119,6 @@ fun RegisterComponent(onSelectLogin: ()-> Unit = {}, onRegister: ()-> Unit = {})
                 onClick = {
                     if (mutablePassword.value == mutablePasswordRepeat.value || mutablePassword.value.isEmpty()){
                         mutableWrongPasswordRepeat.value = false
-                        if (mutableLogin.value.isNotEmpty()){
-                            mutableWrongLogin.value = false
-
-                        }
-                        else{
-                            mutableWrongLogin.value = true
-                        }
                     }
                     else{
                         mutableWrongPasswordRepeat.value = true
@@ -171,20 +126,10 @@ fun RegisterComponent(onSelectLogin: ()-> Unit = {}, onRegister: ()-> Unit = {})
                 }
             ) {
                 Text(
-                    text = stringResource(id = R.string.register),
+                    text = stringResource(id = R.string.change_password),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
-            Spacer(modifier = Modifier.height(4.dp))
-            ClickableText(
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally),
-                text = AnnotatedString(stringResource(id = R.string.sign_in)),
-                style = TextStyle(color = MaterialTheme.colorScheme.onPrimaryContainer),
-                onClick = {
-                    onSelectLogin.invoke()
-                }
-            )
             Spacer(modifier = Modifier.height(8.dp))
 
         }
